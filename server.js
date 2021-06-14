@@ -60,7 +60,7 @@ app.use(cors());
 //   ]
 // }
 
-app.get('/', (req, res) => { res.send('its working yo') })
+app.get('https://ancient-taiga-01841.herokuapp.com', (req, res) => { res.send('its working yo') })
 
 //checking if an existing user signed in with correct credentials or not.
 app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)} )
