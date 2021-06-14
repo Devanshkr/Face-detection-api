@@ -18,7 +18,7 @@ const db = knex({
     // user: 'postgres',
     // password: 'admin',
     // database: 'facerec_db'
-    ssl: true
+    ssl: true,
   }
 });
 
@@ -61,7 +61,7 @@ app.use(cors());
 //   ]
 // }
 
-app.get('/', (req, res) => { res.send(process.env.DATABASE_URL) })
+app.get('/', (req, res) => { res.send('its working yo') })
 
 //checking if an existing user signed in with correct credentials or not.
 app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)} )
