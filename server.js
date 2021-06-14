@@ -61,7 +61,7 @@ app.use(cors());
 //   ]
 // }
 
-app.get('/', (req, res) => { res.send('it;s working yo') })
+app.get('/', (req, res) => { res.send(process.env.DATABASE_URL) })
 
 //checking if an existing user signed in with correct credentials or not.
 app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)} )
