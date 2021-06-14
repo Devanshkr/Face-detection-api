@@ -13,10 +13,12 @@ const image = require('./controllers/image');
 const db = knex({
   client: 'pg',
   connection: {
-    host: '127.0.0.1',
-    user: 'postgres',
-    password: 'admin',
-    database: 'facerec_db'
+    // host: "postgresql-clear-15495",
+    connectionString: process.env.DATABASE_URL,
+    // user: 'postgres',
+    // password: 'admin',
+    // database: 'facerec_db'
+    ssl: true
   }
 });
 
