@@ -24,11 +24,10 @@ const db = knex({
 // });
 
 const app = express();
-
-// in able to use app.req we need to use bodyParser, bc express don't know we are passing json
-app.use(bodyParser.json());
 //cors
 app.use(cors());
+// in able to use app.req we need to use bodyParser, bc express don't know we are passing json
+app.use(bodyParser.json());
 
 // const database = {
 //   user: [
