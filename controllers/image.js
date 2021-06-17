@@ -1,9 +1,7 @@
-//Yaha api ko store karenge
 const Clarifai = require('clarifai');
 
 const app = new Clarifai.App({
   apiKey: '4af055be19814b16a491fb6e0b5c280d'
-  //my api key 
 });
 
 const handleApiCall = (req, res) => {
@@ -17,28 +15,13 @@ const handleApiCall = (req, res) => {
 
 
 const handleImage = (req, res, db) => {
-  //req.body se pass karenge, aur postman mein body section mein jaake daalege
-  //{ "id": "123" }
   const { id } = req.body;
-  //  COMMENTED BELOW BECAUSE NOW USING DATABASE.
-  // let found = false;
-  // database.user.forEach(user => {
-  //   if (user.id === id) {
-  //     found = true;
-  //     user.entries++;
-  //     return res.json(user.entries);
-  //   }
-  // })
-  // if (!found) {
-  //   res.status(404).json('Not found');
-  // }
 
   //READING FROM USER TABLE.
   db('users').where('id', '=', id)
-    .increment('entries', 1)  //KNEX DOCUMENTATION SE PADHKE LAAO
+    .increment('entries', 1) 
     .returning('entries')
     .then(entries => {
-      // console.log(entries);
       res.json(entries);
     })
     .catch(err => res.status(400).json('Unable to get entries'));
