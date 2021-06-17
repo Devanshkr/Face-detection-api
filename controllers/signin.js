@@ -19,17 +19,6 @@ const handleSignin = (req, res, db, bcrypt) => {
       }
     })
     .catch(err => res.status(400).json('Wrong credentials'))
-
-  /*  if(req.body.email === database.user[0].email 
-      && req.body.password === database.user[0].password){
-        //respond with a json
-        // res.json('success');
-      res.json(database.user[0]);
-    }else {
-      // respond with a status
-      res.status(400).json('error logging in');
-    }
-  */
 }
 
 module.exports = {
