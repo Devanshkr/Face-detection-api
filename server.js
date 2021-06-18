@@ -1,7 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-//this one is for the security issue. to protect the password
-//it turns pass string into a hash code.
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
